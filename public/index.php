@@ -12,7 +12,8 @@ $view = $app->view();
 $app->view->setData(array(
     'mainmenu' => array(
         "Статьи" => "/articles",
-        "Статьи2" => "javascript: void(0);"
+        "Статьи2" => "javascript: void(0);",
+        "Статьи3" => "javascript: void(0);"
     )
 ));
 $view->setTemplatesDirectory('./app/view/bootstrap');
