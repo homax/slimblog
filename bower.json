@@ -1,0 +1,22 @@
+{
+  "name": "slimblog",
+  "version": "0.0.0",
+  "authors": [
+    "Maxim Kutyrew (Job) <homaxweb@mail.ru>"
+  ],
+  "keywords": [
+    "slim"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "latest",
+    "html5-boilerplate": "~4.3.0"
+  }
+}
