@@ -1,0 +1,15 @@
+{
+    "name": "homax/slimblog",
+    "description": "description_text",
+    "minimum-stability": "dev",
+    "license": "proprietary",
+    "authors": [
+        {
+            "name": "Maxim Kutyrew",
+            "email": "homaxweb@mail.ru"
+        }
+    ],
+    "require": {
+        "slim/slim": "2.4.3"
+    }
+}
