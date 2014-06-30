@@ -1,13 +1,19 @@
 <?php
 require "../vendor/autoload.php";
-
+set_include_path(get_include_path()
+    .PATH_SEPARATOR.'app/controller'
+    .PATH_SEPARATOR.'app/model');
+function myAutoload($class){
+    require_once($class.'.php');
+}
+spl_autoload_register("myAutoload");
 $app = new \Slim\Slim();
 $view = $app->view();
 $view->setTemplatesDirectory('./app/view/bootstrap');
-$app->get('/', function () use ($app) {
-    $title = "Блог на основе Slim Framework v2.4.3";
-    $app->render('../header.vhtml', array('title' => $title));
-    $app->render('index.vhtml');
-    $app->render('../footer.vhtml');
+$app->get('/', function () {
+    BaseController::init();
+});
+$app->get('/articles', function () {
+    BaseController::init("article");
 });
 $app->run();
