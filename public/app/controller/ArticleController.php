@@ -9,9 +9,11 @@ class ArticleController extends BaseController {
     }
 
     public function indexAction() {
-        $title = "Книжная полка";
-        $this->app->render('header.vhtml', array('title' => $title));
-        $this->app->render($this->template.'index.vhtml', array("title" => $title));
+        $title = "Статьи";
+        $this->app->render('header.vhtml', array("app" => $this->app,
+                                                "template"=> "/".$this->curTemplate.$this->template."/",
+                                                'title' => $title));
+        $this->app->render($this->template.'index.vhtml', array("app" => $this->app, "title" => $title));
         $this->app->render('footer.vhtml');
     }
 }

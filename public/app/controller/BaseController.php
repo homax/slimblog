@@ -6,11 +6,15 @@ class BaseController implements IController {
 
     protected $app;
     protected $template;
+    protected $curTemplate;
+    protected $mainmenu;
 
     function __construct()
     {
         $this->app = Slim::getInstance();
         $this->template = "";
+        $view = $this->app->view();
+        $this->curTemplate = $view->getTemplatesDirectory();
     }
 
     public static function init($controller = "index", $action = "index") {

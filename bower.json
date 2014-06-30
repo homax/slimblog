@@ -17,6 +17,7 @@
   ],
   "dependencies": {
     "jquery": "latest",
-    "html5-boilerplate": "~4.3.0"
+    "html5-boilerplate": "~4.3.0",
+    "bootstrap": "~3.2.0"
   }
 }

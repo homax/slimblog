@@ -9,6 +9,12 @@ function myAutoload($class){
 spl_autoload_register("myAutoload");
 $app = new \Slim\Slim();
 $view = $app->view();
+$app->view->setData(array(
+    'mainmenu' => array(
+        "Статьи" => "/articles",
+        "Статьи2" => "javascript: void(0);"
+    )
+));
 $view->setTemplatesDirectory('./app/view/bootstrap');
 $app->get('/', function () {
     BaseController::init();

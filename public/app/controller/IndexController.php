@@ -9,7 +9,9 @@ class IndexController extends BaseController {
 
     public function indexAction() {
         $title = "Блог на основе Slim Framework v2.4.3";
-        $this->app->render('header.vhtml', array('title' => $title));
+        $this->app->render('header.vhtml', array("app" => $this->app,
+                                                "template"=> $this->curTemplate,
+                                                'title' => $title));
         $this->app->render('index.vhtml');
         $this->app->render('footer.vhtml');
     }

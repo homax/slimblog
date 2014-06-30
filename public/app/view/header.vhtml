@@ -10,7 +10,7 @@
     <meta name="description" content="<?= $description ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <link rel="shortcut icon" href="<?=$template?>/favicon.ico" type="image/ico">
 
     <link rel="stylesheet" href="../../components/html5-boilerplate/css/normalize.css">
     <link rel="stylesheet" href="../../components/html5-boilerplate/css/main.css">
