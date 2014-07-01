@@ -1,7 +1,11 @@
 <?php
+/**
+* Rename this file to 'db.php'
+**/
 return array(
     "db" => array(
         'host' => 'host',
+        'dbname' => 'dbname',
         'username' => 'username',
         'password' => 'password',
     ),
