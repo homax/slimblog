@@ -1,0 +1,9 @@
+<a class="btn btn-default" href="<?= $backurl ?>"><i class="glyphicon glyphicon-arrow-left"></i> Назад к статьям</a>
+<article>
+    <h1><?= $article['title'] ?></h1>
+    <p><?= $article['text'] ?></p>
+    <footer>
+        <div class="category">Опубликовано в: <?= $article['category_id'] ?></div>
+        <div class="tags"></div>
+    </footer>
+</article>

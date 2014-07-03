@@ -17,7 +17,7 @@ class BaseController implements IController {
         $this->curTemplate = $view->getTemplatesDirectory();
     }
 
-    public static function init($controller = "index", $action = "index") {
+    public static function init($controller = "index", $action = "index", $params = array()) {
         $controller = ucfirst($controller) . "Controller";
         $action = strtolower($action) . "Action";
         if(class_exists($controller)) {
@@ -26,7 +26,7 @@ class BaseController implements IController {
                 if($rc->hasMethod($action)) {
                     $controller = $rc->newInstance();
                     $method = $rc->getMethod($action);
-                    $method->invoke($controller);
+                    $method->invoke($controller, $params);
                 } else {
                     throw new Exception("Action");
                 }

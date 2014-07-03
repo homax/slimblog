@@ -11,16 +11,17 @@ $app = new \Slim\Slim();
 $view = $app->view();
 $app->view->setData(array(
     'mainmenu' => array(
-        "Статьи" => "/articles",
-        "Статьи2" => "javascript: void(0);",
-        "Статьи3" => "javascript: void(0);"
+        "Статьи" => "/articles"
     )
 ));
 $view->setTemplatesDirectory('./app/view/bootstrap');
 $app->get('/', function () {
     BaseController::init();
 });
-$app->get('/articles', function () {
+$app->get('/articles/', function () {
     BaseController::init("article");
-});
+})->name('articles');
+$app->get('/articles/:id/', function ($id) {
+    BaseController::init("article", "view", array("id" => $id));
+})->name('article_view');
 $app->run();

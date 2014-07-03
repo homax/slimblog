@@ -1,1 +1,29 @@
 <h1><?= $title . ":: Bootstrap" ?></h1>
+<div class="row">
+    <div class="col-md-12">
+        <div class="jumbotron">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci alias dicta, dolore dolorem dolorum, eius facilis incidunt iste necessitatibus obcaecati repellat soluta tempore unde, vero vitae? Ab ad molestiae veritatis.</p>
+            <p><a class="btn btn-primary btn-lg" role="button">Learn more</a></p>
+        </div>
+    </div>
+</div>
+<div class="row">
+
+    <?php
+        $cats = array();
+        foreach($articles as $a) {
+            $cats[$a['cat']][] = $a;
+        }
+    ?>
+
+    <? foreach($cats as $category => $article) { ?>
+        <div class="col-md-3 col-sm-6 col-xs-12">
+            <header><?= $category ?></header>
+            <ul>
+                <? foreach($article as $art) { ?>
+                <li><a href="<?= $art['url'] ?>"><?= $art['title'] ?></a></li>
+                <? } ?>
+            </ul>
+        </div>
+    <? } ?>
+</div>
