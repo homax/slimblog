@@ -17,6 +17,7 @@ class ArticleController extends BaseController {
         $items = $this->m_art->getArticles();
         foreach ($items as $key => $item) {
             $items[$key]['url'] = $this->app->urlFor('article_view', array('id' => $item['id']));
+            $items[$key]['text'] = Utils::introText($items[$key]['text'], 200);
         }
 
 
