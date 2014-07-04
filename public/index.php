@@ -7,6 +7,7 @@ function myAutoload($class){
     require_once($class.'.php');
 }
 spl_autoload_register("myAutoload");
+assert_options(ASSERT_ACTIVE, 0);
 $app = new \Slim\Slim();
 $view = $app->view();
 $app->view->setData(array(

@@ -13,6 +13,7 @@ class IndexController extends BaseController {
     public function indexAction() {
         $title = "Блог на основе Slim Framework v2.4.3";
         $articles = $this->m_art->getListOfArticles();
+        assert('!empty($article)', "Нету статей");
         foreach ($articles as $key => $item) {
             $articles[$key]['url'] = $this->app->urlFor('article_view', array('id' => $item['id']));
         }
